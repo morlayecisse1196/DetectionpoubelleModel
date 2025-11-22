@@ -7,6 +7,14 @@ import tempfile
 import time
 import os
 
+# Vérifier si cv2 est disponible
+try:
+    import cv2
+    CV2_VERSION = cv2.__version__
+    st.success(f"✅ OpenCV {CV2_VERSION} installé avec succès !")
+except ImportError as e:
+    st.error("❌ OpenCV n'est pas installé correctement")
+    
 # ------------------------------
 # Load YOLOv9 model
 # ------------------------------
